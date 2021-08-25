@@ -4,12 +4,14 @@
   import logo from "./assets/svelte.png"
   import Kofi from "./lib/Kofi.svelte"
   import Menu from "./lib/Menu.svelte"
+  import Social from "./lib/Social.svelte"
 
   const menuItems = [{ name: "Github", url: "https://github.com/narze/single-page-svelte" }]
 </script>
 
 <Kofi name="narze" label="Support Me" />
 <Menu items={menuItems} />
+<Social />
 
 <main class="w-full h-screen flex flex-col justify-center items-center">
   <h1 class="text-6xl text-green-400 flex flex-col">
