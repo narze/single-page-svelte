@@ -2,8 +2,10 @@
   import 'twind/shim'
   import { tw } from 'twind'
   import logo from './assets/svelte.png'
-  import Counter from './lib/Counter.svelte'
+  import Kofi from './lib/Kofi.svelte'
 </script>
+
+<Kofi name="narze" label="Support Me" />
 
 <main class="w-full h-screen flex flex-col justify-center items-center">
   <h1 class="text-6xl text-green-400 flex flex-col"><span>Single</span><span>Page</span><span>Svelte</span></h1>
