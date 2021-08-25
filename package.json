@@ -6,16 +6,29 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "test": "jest src",
+    "test:watch": "npm run test -- --watch"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.15.0",
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.11",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/svelte": "^3.0.3",
     "@tsconfig/svelte": "^2.0.1",
+    "@types/jest": "^27.0",
+    "babel-jest": "^27.0",
+    "jest": "^27.0",
     "svelte": "^3.37.0",
     "svelte-check": "^2.1.0",
+    "svelte-jester": "^1.0",
     "svelte-preprocess": "^4.7.2",
+    "ts-jest": "^27.0",
     "tslib": "^2.2.0",
     "typescript": "^4.3.2",
     "vite": "^2.4.4"
+  },
+  "dependencies": {
+    "twind": "^0.16.16"
   }
 }
