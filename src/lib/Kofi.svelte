@@ -1,23 +1,23 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { onMount } from "svelte"
 
-  export let name: string;
-  export let label = "Support me";
+  export let name: string
+  export let label = "Support me"
 
-  let kofiReady = false;
-  let mounted = false;
+  let kofiReady = false
+  let mounted = false
 
   onMount(() => {
-    mounted = true;
+    mounted = true
     if (kofiReady) {
       loadKofiWidget()
     }
-  });
+  })
 
   function kofiLoaded() {
-    kofiReady = true;
+    kofiReady = true
     if (mounted) {
-      loadKofiWidget();
+      loadKofiWidget()
     }
   }
 
@@ -25,23 +25,23 @@
     window.kofiWidgetOverlay?.draw(
       name,
       {
-        type: 'floating-chat',
-        'floating-chat.donateButton.text': label,
-        'floating-chat.donateButton.background-color': '#ff3e00',
-        'floating-chat.donateButton.text-color': '#fff',
+        type: "floating-chat",
+        "floating-chat.donateButton.text": label,
+        "floating-chat.donateButton.background-color": "#ff3e00",
+        "floating-chat.donateButton.text-color": "#fff",
       },
-      'kofiContainer',
-    );
+      "kofiContainer"
+    )
   }
 </script>
 
 <svelte:head>
   <script
+    on:load={() => kofiLoaded()}
     async
     defer
     type="text/javascript"
-    src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"
-    on:load={() => kofiLoaded()} />
+    src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js" />
 </svelte:head>
 
 {#if name}
