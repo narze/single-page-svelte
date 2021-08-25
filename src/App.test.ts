@@ -7,5 +7,5 @@ import App from "./App.svelte"
 it("works", () => {
   const { getByText } = render(App, {})
 
-  expect(getByText("Single Page Svelte")).toBeInTheDocument()
+  expect(getByText("Svelte")).toBeInTheDocument()
 })
