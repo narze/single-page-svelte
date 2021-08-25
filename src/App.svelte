@@ -6,12 +6,15 @@
   import Menu from "./lib/Menu.svelte"
   import Social from "./lib/Social.svelte"
 
+  const url = "https://single-page-svelte.vercel.app"
+  const title = "Single Page Svelte"
+
   const menuItems = [{ name: "Github", url: "https://github.com/narze/single-page-svelte" }]
 </script>
 
 <Kofi name="narze" label="Support Me" />
 <Menu items={menuItems} />
-<Social />
+<Social {url} {title} />
 
 <main class="w-full h-screen flex flex-col justify-center items-center">
   <h1 class="text-6xl text-green-400 flex flex-col">
@@ -23,11 +26,5 @@
   :root {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
       "Open Sans", "Helvetica Neue", sans-serif;
-  }
-
-  main {
-    text-align: center;
-    padding: 1em;
-    margin: 0 auto;
   }
 </style>

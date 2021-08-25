@@ -6,7 +6,8 @@ import Social from "./Social.svelte"
 
 it("works", () => {
   const { component } = render(Social, {
-    items: [{ name: "Twitter", url: "http://twitter.com/foo" }],
+    title: "Twitter",
+    url: "http://twitter.com/foo",
   })
 
   expect(component).toBeDefined()
