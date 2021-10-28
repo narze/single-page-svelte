@@ -1,25 +1,8 @@
 <script lang="ts">
-  import { onMount } from "svelte"
+  import LibLoader from "./LibLoader.svelte"
 
   export let name: string
   export let label = "Support me"
-
-  let kofiReady = false
-  let mounted = false
-
-  onMount(() => {
-    mounted = true
-    if (kofiReady) {
-      loadKofiWidget()
-    }
-  })
-
-  function kofiLoaded() {
-    kofiReady = true
-    if (mounted) {
-      loadKofiWidget()
-    }
-  }
 
   function loadKofiWidget() {
     window.kofiWidgetOverlay?.draw(
@@ -35,15 +18,12 @@
   }
 </script>
 
-<svelte:head>
-  <script
-    on:load={() => kofiLoaded()}
-    async
-    defer
-    type="text/javascript"
-    src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js" />
-</svelte:head>
-
 {#if name}
   <div id="kofiContainer" class="web-only">{label}</div>
+
+  <LibLoader
+    on:load={loadKofiWidget}
+    src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"
+    libraryDetectionObject="kofiWidgetOverlay"
+  />
 {/if}
