@@ -2,6 +2,8 @@
 
 Build a single page app with Svelte, quickly.
 
+Check out [SvelteKitty](https://github.com/narze/svelte-kitty) for SvelteKit version.
+
 ## Setup
 
 - Clone/fork this repository
